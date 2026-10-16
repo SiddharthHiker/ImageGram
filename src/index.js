@@ -17,7 +17,7 @@ app.use(express.urlencoded());
 app.use('/api',apiRouter); // If the url starts with /api then the request is forwarded to the apiRouter
 
 
-app.get('/ping',isAuthenticated, (req,res) => {
+app.get('/ping',(req,res) => {
     console.log(req.query);
     console.log(req.body);
     console.log(req.user);
