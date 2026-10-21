@@ -23,7 +23,13 @@ export const countAllPosts = async () => {
 }
 
 export const findPostById = async (id) => {
-    return Post.findById(id);
+    try {
+        const post = await Post.findById(id);
+        return post
+    } catch (error) {
+        console.log(error);
+    }
+    
 };
 
 export const deletePostById = async (id) => {
